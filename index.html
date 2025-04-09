@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Predictor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="form-box" id="google_translate_element">
+    <h2 class="smoke-heading" data-text="Crop Prediction from Analyzed Soil Health">
+      Crop Prediction from Analyzed Soil Health
+    </h2>
+    <form onsubmit="event.preventDefault(); getCropRecommendation();">
+      <input type="text" id="soil_type" class="form-control" placeholder="Enter type of Soil" required>
+      <input type="number" id="water_content" class="form-control" placeholder="Enter water content (%)" required>
+      <input type="number" id="moisture_content" class="form-control" placeholder="Enter moisture content (%)" required>
+      <input type="number" id="ph_value" class="form-control" placeholder="Enter pH value" step="0.1" required>
+      <input type="number" id="rain_availability" class="form-control" placeholder="Enter rain availability (mm)" required>
+      <button type="submit" class="submit-btn">Get Crop Prediction</button>
+    </form>
+    <h3 id="result"></h3>
+  </div>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+</body>
+</html>

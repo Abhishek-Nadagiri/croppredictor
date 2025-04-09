@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(dis.jpg);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.form-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 24px;
+  padding: 2rem;
+  max-width: 420px;
+  width: 95%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+}
+
+.smoke-text {
+  font-size: 1.4rem;
+  text-align: center;
+  position: relative;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.smoke-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: -100%;
+  top: 0;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.15);
+  animation: smokeFlow 10s linear infinite;
+}
+
+@keyframes smokeFlow {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  50% {
+    left: 50%;
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #4cd137;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.submit-btn {
+  background-color: #4cd137;
+  border: none;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #44bd32;
+  transform: scale(1.02);
+}
+
+#result {
+  margin-top: 1.2rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
